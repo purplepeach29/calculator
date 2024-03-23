@@ -40,3 +40,19 @@ button, div {
     width: 24%;
     padding: 3px;
 }
+
+.number, .operator, .equals {
+    display: inline-block;
+    background-color: beige;
+    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    height: 14%;
+    width: 20%;
+
+}
+
+.mult, .equals, .zero {
+    margin-top: 4px;
+    width: 28%;
+}
