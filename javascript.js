@@ -25,3 +25,42 @@ function appendTextContent(e) {
 function getDisplayNumber() {
     return Number(display.textContent)
 }
+
+function evaluate() {
+    /**
+     * If evaluate is being called, means that we have two operands and
+     * an operator. All it should do it set the display / current number to 
+     * what it evaluated to then reset 
+     */
+        let result;
+        let dividedByZero = false
+        if (operandTwo && !operandOne) {
+            operandOne = 0;
+        }
+        if (!operandTwo) {
+            operandTwo = getDisplayNumber()
+        }
+        if (operator == "+") {
+            result = operandOne + operandTwo
+        } else if (operator == "-") {
+            result = operandOne - operandTwo
+        } else if (operator == "*") {
+            result = operandOne * operandTwo
+        } else if (operator == "/") {
+            if (operandTwo == 0) {
+                display.textContent = "Get real."
+                dividedByZero = true
+            } else {
+                result = operandOne / operandTwo
+            }
+        }
+        if (dividedByZero) {
+            display.textContent = "Get real."
+            operandOne = 0
+            operandTwo = undefined
+            operator = undefined
+        } else {
+            display.textContent = result
+            operandOne = getDisplayNumber()
+        }
+}
