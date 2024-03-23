@@ -30,3 +30,13 @@ button, div {
     margin: 5px;
     margin-left: 0px;
 }
+
+.percentage, .toggle-neg {
+    display: inline-block;
+    background-color: beige;
+    border-radius: 10px;
+    margin-left: 2px;
+    height: 12%;
+    width: 24%;
+    padding: 3px;
+}
