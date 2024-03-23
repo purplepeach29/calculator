@@ -17,3 +17,11 @@ function clearAll() {
     operator = undefined
     bothOperatorsPresent = false
 }
+
+function appendTextContent(e) {
+    display.textContent = display.textContent + e.target.textContent
+}
+
+function getDisplayNumber() {
+    return Number(display.textContent)
+}
