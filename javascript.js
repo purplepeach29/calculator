@@ -64,3 +64,75 @@ function evaluate() {
             operandOne = getDisplayNumber()
         }
 }
+
+allNumbers.forEach(function(button) {
+    button.addEventListener("click", (e) => {
+        if (!operator && !operandOne) {
+            display.textContent = ""
+            appendTextContent(e)
+            operandOne = getDisplayNumber()
+        } else if (!operator && operandOne && !operandTwo) {
+            appendTextContent(e)
+            operandOne = getDisplayNumber()
+        } else if (!operandTwo && operator) {
+            display.textContent = ""
+            appendTextContent(e)
+            operandTwo = getDisplayNumber()
+        } else if (operandTwo && operator) {
+            appendTextContent(e)
+            operandTwo = getDisplayNumber()
+        }
+        // we don't have to test for the second operand, because upon the 
+        // pressing of second operand it will be evaluated
+    })
+})
+
+operators.forEach(function(operatorBtn) {
+    operatorBtn.addEventListener("click", (e) => {
+        // should if operand one and operator present, should set operandTwo as
+        // the value on the screen even if it's the same as operandOne
+        if (!operator) {
+            operandOne = getDisplayNumber()
+            operator = e.target.textContent
+            console.log("no operator, operant 1 set")
+        } else {
+            if (!operandTwo) {
+                operandTwo = getDisplayNumber()
+            }
+            evaluate()
+            operandOne = getDisplayNumber()
+            operandTwo = ""
+            operator = e.target.textContent
+            console.log("operator, operand 1 set")
+        }
+            // now if operator is pressed again, same thing happens
+        
+        // if no operandOne, then nothing will happen
+        // what if operandOne = 0?
+        /**
+         * Will set operand to +
+         * Then if pressing 3, will add 3 and set operand 2 to display number (3)
+         */
+    })
+})
+
+clearBtn.addEventListener("click", () => {
+    clearAll()
+})
+
+percentBtn.addEventListener("click", () => {
+    display.textContent = Number(display.textContent) / 100
+})
+
+equalsBtn.addEventListener("click", () => {
+    if (operator) {
+        evaluate()
+    }
+    operandOne = "" // maybe? Might not work
+    operator = ""
+    operandTwo = ""
+})
+
+toggleNegBtn.addEventListener("click", () => {
+    display.textContent = Number(display.textContent) * -1
+})
