@@ -19,3 +19,14 @@ button, div {
     padding: 10px;
 
 }
+.clear {
+    display: inline-block;
+    background-color: beige;
+    border-radius: 10px;
+
+    height: 12%;
+    width: 35%;
+    padding: 0px;
+    margin: 5px;
+    margin-left: 0px;
+}
