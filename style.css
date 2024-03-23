@@ -67,3 +67,42 @@ button, div {
     border-radius: 15px;
     text-align: right;
 }
+
+.flexbox-container-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.flexbox-container-inside {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+.flexbox-container-inside-mian {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-basis: 1;
+    flex-grow: 2;
+}
+
+.flexbox-container {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 0;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 50px;
+    border: 2px solid black;
+}
+
+.center-container {
+    flex-grow: 1;
+
+}
