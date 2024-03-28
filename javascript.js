@@ -94,7 +94,7 @@ operators.forEach(function(operatorBtn) {
         if (!operator) {
             operandOne = getDisplayNumber()
             operator = e.target.textContent
-            console.log("no operator, operant 1 set")
+            console.log("no operator, operand 1 set")
         } else {
             if (!operandTwo) {
                 operandTwo = getDisplayNumber()
